@@ -126,3 +126,9 @@ pip install -r requirements.txt
 
 5. Run Streamlit App
 streamlit run frontend/app.py
+
+Author<br>
+Aditya Valecha
+
+License<br>
+This project is for educational and portfolio purposes.
