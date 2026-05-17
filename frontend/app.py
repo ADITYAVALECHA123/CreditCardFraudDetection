@@ -403,7 +403,7 @@ if page == "⚡ Real-Time Prediction":
                     risk += 0.20
                 if amt >10000:
                     risk +=0.30
-                if "fraud" in merchant.lower():
+                if isinstance(merchant, str) and "fraud" in merchant.lower():
                     risk += 0.30
                 risk += np.random.uniform(0, 0.03)
                 final_prob_val = min(0.99, risk)
@@ -426,7 +426,7 @@ if page == "⚡ Real-Time Prediction":
             risk_factors.append("💰 High transaction amount")
         if is_night:
             risk_factors.append("🌙 Night-time transaction")
-        if "fraud" in merchant.lower():
+        if isinstance(merchant, str) and "fraud" in merchant.lower():
             risk_factors.append("🚨 Suspicious merchant pattern")
         st.markdown("<br>", unsafe_allow_html=True)
         if is_fraud:
